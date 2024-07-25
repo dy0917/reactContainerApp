@@ -52,7 +52,5 @@ jobs:
           containerAppName: react-album
           resourceGroup: album-containerapps
           imageToBuild: default/[parameters('containerAppName')]:${{ github.sha }}
-          _buildArgumentsKey_: |
-            _buildArgumentsValues_
 
 
