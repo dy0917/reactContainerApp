@@ -46,4 +46,4 @@ jobs:
           acrName: caf2c0c9c8eeacr
           containerAppName: docker-react
           resourceGroup: album-containerapps
-          imageToDeploy: myregistry.azurecr.io/app:${{ steps.vars.outputs.sha_short }}
+          imageToDeploy: caf2c0c9c8eeacr.azurecr.io/app:${{ steps.vars.outputs.sha_short }}
