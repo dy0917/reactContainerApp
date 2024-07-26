@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+    
+      - name: show path
+        run : echo ${GITHUB_WORKSPACE}
 
       - name: Docker Login
         uses: azure/docker-login@v2
@@ -23,6 +26,6 @@ jobs:
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
-      - run:
-          docker build . -t caf2c0c9c8eeacr.azurecr.io/my-react-app:${{ github.sha }}
-          docker push contoso.azurecr.io/my-react-app:${{ github.sha }}
+      - run: |
+          docker build -t caf2c0c9c8eeacr.azurecr.io/my-react-app:${{ github.sha }} .
+          docker push caf2c0c9c8eeacr.azurecr.io/my-react-app:${{ github.sha }}
